@@ -1,15 +1,10 @@
 <!DOCTYPE html>
+<!-- Wilmer Guerra -->
 <html lang="en">
 <head>
 	<title>Assignment 4</title>
 	<script type="text/javascript">
-		var daysOfWeek = ['Sunday',
-						  'Monday',
-						  'Tuesday',
-						  'Wednesday',
-						  'Thursday',
-						  'Friday',
-						  'Saturday'];
+
 		var quotes = ['Ability is nothing without opportunity - Napeoleon Bonaparte',
 					  'Nothing happens unless first we dream -Carl Sandburg',
 					  "Believe you can and you're halfway there - Theodore Roosevelt",
@@ -17,10 +12,56 @@
 					  "Don't let the fear of striking out hold you back - Babe Ruth",
 					  "We can't help everyone, but everyone can help someone - Ronald Reagan",
 					  "With self-discipline most anything is possible - Theodore Roosevelt"];
+
+		var daysOfWeek = ['Sunday',
+						  'Monday',
+						  'Tuesday',
+						  'Wednesday',
+						  'Thursday',
+						  'Friday',
+						  'Saturday'];
+		var quoteOfTheDay;
+
+		var theDate = new Date();
+		currentDate = theDate.toDateString();
+
+		for (var j = 0; j < 7; j++){
+			quoteOfTheDay = quotes[j];
+		}
+		
+
+		window.onload = function() {
+			
+			$('quotes').innerHTML = quoteString;	
+			$('date').firstChild.nodeValue = currentDate;
+			$('quote').firstChild.nodeValue = quoteOfTheDay; 
+		}
+
+
 	</script>
 </head>
 <body>
 	<h1>Quote of the Day</h1>
+	<div id= "quote">* </div>
+	<div id="date">*</div>
 	<hr>
+	<h3>All the Quotes:</h3>
+	<div id ="quotes"></div>
+	<script type="text/javascript">
+
+		var $ = function(id){
+			return document.getElementById(id);
+		}
+		var quoteString = "";
+
+		for(var i = 0; i < quotes.length; i++){
+			
+			quoteString += quotes[i] + "<br>";
+		}
+
+		
+
+	</script>
+	
 </body>
 </html>
